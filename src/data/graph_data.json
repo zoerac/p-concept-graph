@@ -1,0 +1,2025 @@
+{
+  "nodes": [
+    {
+      "id": "ph",
+      "label": "pH",
+      "layer": "property",
+      "x": 0.0,
+      "y": 0
+    },
+    {
+      "id": "fe_al_oxide",
+      "label": "Fe/Al oxides (oxalate-extractable)",
+      "layer": "property",
+      "x": 0.16666666666666666,
+      "y": 0
+    },
+    {
+      "id": "om",
+      "label": "Organic matter / TOC",
+      "layer": "property",
+      "x": 0.3333333333333333,
+      "y": 0
+    },
+    {
+      "id": "clay",
+      "label": "Clay content",
+      "layer": "property",
+      "x": 0.5,
+      "y": 0
+    },
+    {
+      "id": "silt",
+      "label": "Silt content",
+      "layer": "property",
+      "x": 0.6666666666666666,
+      "y": 0
+    },
+    {
+      "id": "cec",
+      "label": "CEC",
+      "layer": "property",
+      "x": 0.8333333333333334,
+      "y": 0
+    },
+    {
+      "id": "ca_carbonate",
+      "label": "Ca / carbonate",
+      "layer": "property",
+      "x": 1.0,
+      "y": 0
+    },
+    {
+      "id": "psi",
+      "label": "P sorption index (PSI)",
+      "layer": "metric",
+      "x": 0.0,
+      "y": 0.5
+    },
+    {
+      "id": "qmax",
+      "label": "Langmuir Qmax",
+      "layer": "metric",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "id": "sorption_capacity",
+      "label": "P sorption capacity",
+      "layer": "metric",
+      "x": 1.0,
+      "y": 0.5
+    },
+    {
+      "id": "total_p",
+      "label": "Total P",
+      "layer": "p_state",
+      "x": 0.0,
+      "y": 1
+    },
+    {
+      "id": "organic_p",
+      "label": "Organic P",
+      "layer": "p_state",
+      "x": 0.16666666666666666,
+      "y": 1
+    },
+    {
+      "id": "olsen_p",
+      "label": "Olsen P / available P",
+      "layer": "p_state",
+      "x": 0.3333333333333333,
+      "y": 1
+    },
+    {
+      "id": "labile_p",
+      "label": "Labile P",
+      "layer": "p_state",
+      "x": 0.5,
+      "y": 1
+    },
+    {
+      "id": "ca_bound_p",
+      "label": "Ca-bound P",
+      "layer": "p_state",
+      "x": 0.6666666666666666,
+      "y": 1
+    },
+    {
+      "id": "fe_bound_p",
+      "label": "Fe-bound P",
+      "layer": "p_state",
+      "x": 0.8333333333333334,
+      "y": 1
+    },
+    {
+      "id": "al_bound_p",
+      "label": "Al-bound P",
+      "layer": "p_state",
+      "x": 1.0,
+      "y": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "al_bound_p--ph",
+      "head": "al_bound_p",
+      "tail": "ph",
+      "polarity": "-",
+      "mechanism_hint": "Lower pH raises the saturation state of Al phosphates such as variscite and amorphous Al phosphate, which then retain P.; At acidic to neutral pH, added P is retained mainly on Fe/Al oxide surfaces, so Fe-Al-P dominates the adsorbed inorganic P.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P026",
+          "quote": "Some samples were also close to saturation with amorphous Al phosphate at low pH.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Xiao2017_P024",
+          "quote": "For all P addition treatments, Fe-Al-P occupied over 40% of total adsorbed inorganic phosphorus for acidic and neutral purple soils.",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "al_bound_p--total_p",
+      "head": "al_bound_p",
+      "tail": "total_p",
+      "polarity": "0",
+      "mechanism_hint": "At high P loading Al phosphates form and control P retention, as shown by speciation modelling of P-added samples.; Once sorption saturates at high P loading, the Fe-Al-bound P fraction is depleted while soluble P rises.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P026",
+          "quote": "speciation modeling suggests a significant role of Al phosphates in retaining P at high fertilization levels and at pHb6.5",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "This release is indicated by the higher proportions of NH4Cl-P (over 40%) and the decreasing Fe-Al-P fraction.",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "ca_bound_p--ca_carbonate",
+      "head": "ca_bound_p",
+      "tail": "ca_carbonate",
+      "polarity": "+",
+      "mechanism_hint": "Calcareous material supplies Ca that precipitates and adsorbs P, making Ca-bound P the dominant inorganic fraction.; Calcium and carbonate favour the formation of Ca-P, which becomes the dominant P form in calcareous soils.; In calcareous soils added P is retained mainly as Ca-P through precipitation/sorption on carbonate and Ca surfaces.; CaCO3 reacts with phosphate to form apatite-like Ca-bound P, so carbonatic soils hold a larger Ca-P fraction.; Carbonate-rich calcareous soils precipitate applied fertilizer P as Ca-P minerals such as brushite.; Carbonate-rich calcareous soil precipitates P as Ca-bound forms such as brushite, which dominate the inorganic P pool.; Redistribution of Ca from subsurface to surface soil increases the pool available for P sequestration as Ca-bound P.; More soil Ca from tillage increases P retention in the Ca-bound fraction.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P002",
+          "quote": "Ca-bound P and Fe-Al-bound P represented the majority of the total inorganic P of calcareous soils.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P022",
+          "quote": "confirming that Ca-P was the most important form of P",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P024",
+          "quote": "Ca-P was dominant (28%-83%) in calcareous soils and did not show saturation when adding the greatest amount of P.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "More Ca-P presented in calcareous purple soils compared with other soils.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "CaCO3 and other cations (Mg2+) dominated P adsorption in calcareous purple soils (Table 3), which may result in a higher proportion of apatite- P (the reaction products of P and CaCO3) in calcareous purple soils",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P029",
+          "quote": "Ca-P was the dominant form of calcareous purple soils under a higher P addition status.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P029",
+          "quote": "Brushite, therefore, is the primary form of the Ca-P mineral in calcareous purple soils.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "Calcareous purple soil had the highest P adsorption, with Ca-bound P and Fe-Al-bound P representing the majority of total inorganic P.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "The greater P adsorption and brushite formation reduced the risk of NH4Cl-P migration after a high dose of P addition.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P003",
+          "quote": "continuation of current farming practices and tillage regimes promotes the redistribution of Ca from subsurface to surface soil, which leads to greater P sequestration in the Ca-bound fraction.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P017",
+          "quote": "Because of increases in soil Ca levels due to tillage (Sanchez and Porter, 1994; Snyder, 1994), P retention was enhanced in the Ca-bound P fraction of cultivated soils.",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ca_bound_p--olsen_p",
+      "head": "ca_bound_p",
+      "tail": "olsen_p",
+      "polarity": "-",
+      "mechanism_hint": "Accumulated reactive Ca phosphate dissolves in the PAL extractant, so measured available P is inflated above the sorption-model estimate.; Sequestration of fertilizer P into stable Ca-bound fractions lowers the P available to crops.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P029",
+          "quote": "This is most likely caused by accumulation of reactive Ca phosphate in this soil, which is partly dissolved during the PAL extraction.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Castillo2008_P003",
+          "quote": "Higher P levels in more recalcitrant fractions for cultivated soils indicated that more of the applied fertilizer P was sequestered in stable fractions, which decreased P availability to crops",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ca_bound_p--ph",
+      "head": "ca_bound_p",
+      "tail": "ph",
+      "polarity": "+",
+      "mechanism_hint": "Reactive Ca phosphate (hydroxyapatite/fluorapatite-like) dissolves readily and thereby controls how PO4-P solubility responds to pH in this soil.; Higher pH lowers hydroxyapatite solubility, so Ca phosphates become saturated and can precipitate and retain P.; High pH favors precipitation of calcium phosphates, fixing P in Ca-bound form.; Higher pH favors precipitation/retention of P in Ca-bound fractions, while acidic pasture soils retain P in humic-fulvic (organic) fractions instead.; Higher soil pH favors retention of P in Ca-bound fractions.; Higher pH facilitates P retention by Ca, so more P ends up in the Ca-bound fraction.; Higher soil pH favors precipitation/recovery of applied P as Ca-bound phosphate, so more P ends up in the Ca-bound fraction.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P020",
+          "quote": "This suggests that the Fors soil contained reactive Ca phosphate (possibly hydroxyapatite or fluorapatite) that dissolved readily, thus determining the pH dependence of the PO4\u2013P solubility for this soil",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P026",
+          "quote": "most samples were undersaturated with respect to hydroxyapatite and increasingly so with decreasing pH",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Monterroso1996_P022",
+          "quote": "The high pH values of some of these samples might also cause precipitation of calcium phosphates, contributing to phosphorus fixation.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Castillo2008_P003",
+          "quote": "The higher pH of the cultivated soil (6.8) favored retention in Ca fractions while the lower pH of pasture (5.3) favored P retention in the humic\u2013fulvic acid fraction.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P017",
+          "quote": "the higher pH of the cultivated soil (6.8) favored P retention in Ca fractions",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P022",
+          "quote": "possibly due to a higher pH which facilitated P retention by Ca",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P022",
+          "quote": "The lower pH of pastures soils may have retarded P association with Ca and decreased P retention in this pool relative to cultivated soil.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "Continuation of conventional crop management practices will likely further increase soil pH and Ca levels, leading to greater recovery of applied P fertilizer in the Ca-bound P fraction and a decrease in the proportion of applied P recovered in the labile fraction.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "Soil pH appeared to influence P distribution among chemical fractions by increasing concentrations in Ca-bound fractions for high pH cultivated soils",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--fe_al_oxide",
+      "head": "ca_carbonate",
+      "tail": "fe_al_oxide",
+      "polarity": "-",
+      "mechanism_hint": "Calcareous parent material weathering limits accumulation of free Fe oxides, so calcareous purple soils hold less Fed than the other purple soil types.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P017",
+          "quote": "Fed contents of calcareous purple soils are lower than the other two types of purple soils (Table 1).",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--fe_bound_p",
+      "head": "ca_carbonate",
+      "tail": "fe_bound_p",
+      "polarity": "-",
+      "mechanism_hint": "High Ca levels in cultivated soil shift applied P into Ca-bound pools instead of the Fe\u2013Al fraction.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P021",
+          "quote": "Thus, less P retention in the Fe\u2013Al fraction occurred in cultivated soils presumably as a result of low Fe concentrations and high Ca levels.",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--labile_p",
+      "head": "ca_carbonate",
+      "tail": "labile_p",
+      "polarity": "-",
+      "mechanism_hint": "High carbonate-driven adsorption and brushite precipitation lock up added P instead of leaving it in the soluble NH4Cl-P pool.; Higher Ca promotes retention of P in Ca-bound forms, leaving a smaller labile fraction.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "The greater P adsorption and brushite formation reduced the risk of NH4Cl-P migration after a high dose of P addition.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "leading to greater recovery of applied P fertilizer in the Ca-bound P fraction and a decrease in the proportion of applied P recovered in the labile fraction",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--ph",
+      "head": "ca_carbonate",
+      "tail": "ph",
+      "polarity": "+",
+      "mechanism_hint": "Tillage mixes CaCO3 into the soil and dissolved carbonates move upward and deposit at the surface, both raising soil pH.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P015",
+          "quote": "Soil pH was higher for cultivated than pasture soil (Table 1) due to inclusion of CaCO3 into soil by tillage and the upward flux of dissolved carbonates followed by deposition on the surface after evaporation",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--psi",
+      "head": "ca_carbonate",
+      "tail": "psi",
+      "polarity": "+",
+      "mechanism_hint": "Carbonates provide Ca that precipitates and adsorbs P, so removing them lowers the soil's P requirement index.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P033",
+          "quote": "The carbonates removal from the studied soils reduced their requirement for P by 33.3 and 17.03%, respectively.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P033",
+          "quote": "organic matter free > untreated soil > carbonates free> Fe-Al oxides free",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--qmax",
+      "head": "ca_carbonate",
+      "tail": "qmax",
+      "polarity": "+",
+      "mechanism_hint": "Carbonates provide Ca that precipitates and adsorbs P, so their removal lowers the maximum sorption capacity.; Carbonates provide additional P sorption sites, so removing them lowers the Langmuir Qmax of the soil.; Calcium carbonate provides precipitation sites that add to the Langmuir sorption maximum, so removing it lowers Qmax.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P002",
+          "quote": "While, removing of the carbonates decreased the Qmax values of the soils by 118 and 67 mg kg-1.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P019",
+          "quote": "Removal of carbonates led to the reduction (p \u2264 0.05) in P sorption by the soil.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P019",
+          "quote": "The decrease amounts in Qmax values of Orzuiyeh and Baft soils were obtained as 17.66 and 12.5%, respectively.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P021",
+          "quote": "The higher decrease in Qmax value of Orzuiyeh soil upon removing the carbonates, was possibly due to the higher content of equivalent calcium carbonate compared to Baft area.",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "ca_carbonate--sorption_capacity",
+      "head": "ca_carbonate",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Ca from carbonates promotes P adsorption and precipitation, raising the P sorption capacity.; Calcium carbonate fixes P through adsorption and precipitation, raising P sorption capacity.; Phosphate is adsorbed and precipitated on calcium carbonate surfaces, raising the soil's capacity to sorb P.; Carbonates contribute to P sorption, so their removal reduces the soil's P sorption capacity.; Carbonate surfaces expose \u2261CaOH and \u2261CO3H groups that provide sorption sites and precipitate P, so more carbonate raises the soil's P sorption capacity.; Carbonate minerals raise P retention through Ca phosphate precipitation rather than surface adsorption.; Carbonate removal lowered sorption capacity relative to untreated soil, indicating carbonate phases contribute sorption sites.; Carbonate minerals retain P through adsorption and precipitation, so higher CaCO3 raises P sorption and lowers desorption.; Carbonate and its accompanying Ca (or Mg) cations promote P retention, so carbonate removal lowered PMBC and thus the P sorption capacity.; Calcium carbonate raises the P requirement by precipitating and adsorbing phosphate, giving a higher SPR.; Carbonate minerals provide additional P sorption sites, so their removal lowers P sorption.; Carbonates supply additional P sorption sites, so their presence raises P sorption capacity, though less than Fe and Al oxides.; Carbonate-rich, high-pH soils hold P by precipitation rather than sorption onto oxide surfaces, lowering measured sorption.; Carbonate raises pH and competes with phosphate for sorption sites, lowering measured adsorption.; Ca2+ promotes phosphate retention through cation bridging and Ca-phosphate formation, raising P adsorption.; CaCO3 and dissolved Ca2+/Mg2+ precipitate and adsorb phosphate as Ca-bound P, raising P retention at high pH.; CaCO3 is reported to decrease the adsorption effect, weakening P sorption in cropland soils.; Carbonates and accompanying cations provide the main fixation sites for phosphate in calcareous soils.; CaCO3 keeps supplying sorption and precipitation sites, so capacity does not saturate as P additions rise.; Rising soil Ca levels increase P retention in non-labile pools, reducing the share of P that stays plant-available.; Soil Ca enhances P retention, raising the soil's capacity to sorb/hold P.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P002",
+          "quote": "Overall, the results of the present study revealed that the P sorption capacity of the soils decreased in the presence of the OM and increased in the presence of Fe-Al oxides and carbonates.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P016",
+          "quote": "This may be due to higher clay and equivalent calcium carbonate content in Orzuiyeh soil compared to Baft",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P016",
+          "quote": "Some studies have shown that clay and calcium carbonate play important roles in fixing P in the soil",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P017",
+          "quote": "The P sorption in calcareous soils is highly influenced by the adsorption and precipitation reactions on the calcium carbonate surfaces",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P019",
+          "quote": "These results indicate that carbonates play an important role in the P sorption capacity variation in the soil.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P020",
+          "quote": "The calcium carbonate removal from the soil results in a decrement in the surface sorption sites, thus reducing the P sorption capacity.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P020",
+          "quote": "P sorption is highly affected by the sorption and precipitation reactions on the calcium carbonate surfaces",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P020",
+          "quote": "The ability of carbonate minerals to adsorb P is due to the presence of \u2261CaOH and \u2261CO3H functional groups on their external surfaces.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P021",
+          "quote": "Carbonate minerals affect the P sorption of the solution through precipitation processes, especially at high P concentrations",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P025",
+          "quote": "according to their P sorption capacities, the studied soils were ordered as: organic matter free > Untreated soil >carbonates free > Fe-Al oxides free",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P028",
+          "quote": "the presence of carbonate minerals in the soil significantly increases the P retention by the soil through adsorption and precipitation processes",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P028",
+          "quote": "Soils with higher CaCO3 contents have lower P desorption capacities",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P030",
+          "quote": "PMBC values significantly decreased in the soils after carbonates removal.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P032",
+          "quote": "The SPR value for Orzuiyeh soil was higher than that of Baft due to the clay and calcium carbonate equivalent contents.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P034",
+          "quote": "Removing the carbonate minerals from the soils reduced the P sorption due to the reduction in sorption sites.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P035",
+          "quote": "while it increased in the presence of Fe and Al oxides as well as carbonates",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P035",
+          "quote": "The effects of Fe and Al oxides were greater as compared to the carbonates.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Xiao2017_C007",
+          "quote": "Pearson correlation analysis of physicochemical properties and P sorption under different pHs, parent materials and land uses",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "CaCO3 | -0.49* | 0.28 | -0.04 | -0.43",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P019",
+          "quote": "and a negative relationship with CaCO3",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P020",
+          "quote": "and only a positive correlation with Ca2+ and Mg2+",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P022",
+          "quote": "At pH 8.4, P adsorption exhibited a significant positive correlation with CaCO3, Ca2+ and Mg2+",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For cropland soils, CEC, Na+, clay, TP, Olsen-P, CaCO3 and Fec are possible inhibitors of P sorption.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "indicating that CaCO3 has a decreased adsorption effect in cropland soils",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "CaCO3 and other cations (Mg2+) dominated P adsorption in calcareous purple soils (Table 3)",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "probably due to the greater fixation of P by carbonates",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "Calcareous purple soil had the highest P adsorption, with Ca-bound P and Fe-Al-bound P representing the majority of total inorganic P.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "There were no signs of saturation of P adsorption by CaCO3 with increasing additions of P.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P020",
+          "quote": "projected increases in soil Ca levels resulting from subsidence, which enhances P retention in pools not considered plantavailable",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "soil Ca of cultivated soils enhanced P retention",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "cec--psi",
+      "head": "cec",
+      "tail": "psi",
+      "polarity": "+",
+      "mechanism_hint": "Higher exchange capacity marks more reactive surfaces that also retain phosphate.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "CICe (cmo, kg-\u2018) | 0.45",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "cec--sorption_capacity",
+      "head": "cec",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Exchange complexes retain P through exchange reactions at their charged surfaces.; Higher exchange capacity marks more reactive surfaces and therefore more P retention.; Higher exchange capacity means more charged surfaces retaining phosphate, so P adsorption rises.; Higher CEC means more exchange sites holding cations that bridge phosphate, so P adsorption rises with CEC.; Higher cation exchange capacity provides more exchange sites that retain phosphate, increasing P adsorption.; Higher CEC marks a soil where cation occupancy of exchange sites is associated with weaker P sorption.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P017",
+          "quote": "some other materials may be involved in P sorption processes, namely organic matter, clay, poorly-crystalline iron oxides and exchange complexes, particularly at low pH values",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "CEC | 0.20 | 0.37* | 0.23 | 0.43",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "CEC | 0.12 | 0.1 | 0.39 | 0.73*",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P019",
+          "quote": "CEC showed a positive correlation under pH 6.5",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P021",
+          "quote": "P adsorption showed a significant positive correlation with CEC under pH 4.5 (Table 3), but the correlation weakened under pH 6.5 and 8.4",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P022",
+          "quote": "P adsorption observed a significant positive correlation with CEC and Fed at pH 4.5.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For cropland soils, CEC, Na+, clay, TP, Olsen-P, CaCO3 and Fec are possible inhibitors of P sorption.",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "clay--labile_p",
+      "head": "clay",
+      "tail": "labile_p",
+      "polarity": "-",
+      "mechanism_hint": "Higher clay content increases surface area and adsorption sites, so more dissolved PO4-P is retained and its concentration in effluent and groundwater drops.",
+      "evidence": [
+        {
+          "unit_id": "Humphrey2015_P030",
+          "quote": "soils with high clay content were the most effective at reducing PO4-P concentrations",
+          "paper": "Humphrey2015"
+        },
+        {
+          "unit_id": "Humphrey2015_P030",
+          "quote": "OWS installed in soils with relatively high clay contents typically remove more PO4 than soils with lower clay content",
+          "paper": "Humphrey2015"
+        }
+      ]
+    },
+    {
+      "id": "clay--olsen_p",
+      "head": "clay",
+      "tail": "olsen_p",
+      "polarity": "0",
+      "mechanism_hint": "Texture changes the shape of the pH-solubility curve because clay-rich soils carry more variable-charge oxide surfaces that buffer phosphate concentration differently from sandy soils.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P039",
+          "quote": "soil texture appeared to be significant in this regard",
+          "paper": "Gustafsson2012"
+        }
+      ]
+    },
+    {
+      "id": "clay--psi",
+      "head": "clay",
+      "tail": "psi",
+      "polarity": "+",
+      "mechanism_hint": "Clay surfaces carry sorption sites that retain phosphate, raising the sorption index.; Fine clay-sized particles carry Fe/Al hydroxyl surfaces that sorb phosphate, so the P sorption index tracks the fine-textured fraction.; Clay-sized surfaces carry sorption sites and charge that retain phosphate, so clay-rich dump soils show the highest PSI.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "%Clay | 0.36",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P030",
+          "quote": "line-textured fractions (clay + tine silt)",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P042",
+          "quote": "The highest PSI values were found in acid soils made up of organic matter and carbonaceous clays, rich in sulphide and in poorlycrystalline Fe and Al compounds.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P042",
+          "quote": "The soils having the lowest P sorbing capacity are made up of shales, low in non-crystalline compounds, organic carbon and clay.",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "clay--sorption_capacity",
+      "head": "clay",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Clay surfaces contribute to P sorption in addition to Al compounds.; Clay surfaces and associated oxides supply sorption sites, so clay-poor shale soils retain little P.; Carbonaceous clay-rich soils act as the dominant P sinks, i.e. they sorb more P.; Higher clay content provides more fixation sites, so soils with more clay sorb and fix more P.; Clay surfaces provide sorption sites, so higher clay content raises the P requirement (SPR) needed to hold 0.2 mg L-1 in solution.; Clay surfaces, largely through oxide coatings and high specific surface area, provide P adsorption sites so clay-rich soils adsorb more P.; Clay particles and their oxide coatings add specific surface and sorption sites for phosphate, so more clay raises P sorption capacity.; Finer texture means more clay-sized surface area and reactive sites, increasing P adsorption capacity.; Clay surfaces sorb P, but the sign depends on clay mineralogy and soil group.; Fine-textured (less sandy) soils hold more phosphate, so increasing clay content raises P adsorption.; Clay is listed among the soil properties acting as inhibitors of P sorption in cropland soils.; Clay surfaces add adsorption sites, so higher clay content raises P sorption capacity (r = 0.968).",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P017",
+          "quote": "some other materials may be involved in P sorption processes, namely organic matter, clay, poorly-crystalline iron oxides and exchange complexes, particularly at low pH values",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P021",
+          "quote": "because of the presence of only slightly weathered materials, and being low in non-crystalline components, organic carbon and clay",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P027",
+          "quote": "The soils made up of carbonaceous clays are undoubtedly the major P sinks.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Hosseini2021_P016",
+          "quote": "This may be due to higher clay and equivalent calcium carbonate content in Orzuiyeh soil compared to Baft",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P016",
+          "quote": "soils with higher clay content have more P fixation potential than those with less clay",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P032",
+          "quote": "The SPR value for Orzuiyeh soil was higher than that of Baft due to the clay and calcium carbonate equivalent contents.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Alakeh2022_P056",
+          "quote": ", and clay (r  0.968 and p < 0.05). This shows that clay, free and amorphous iron, and aluminium are the main parameters considered predictors of phosphorus adsorption activity",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Alakeh2022_P057",
+          "quote": "free Al (r 0.994 and p < 0.01, r 0.988 and p < 0.05), and clay (r 0.968 and p < 0.05), which were the main parameters considered as predictors of phosphorus adsorption activities in the soils.",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Xiao2017_P002",
+          "quote": "the P adsorption capability was mainly influenced by Fe-oxides and soil texture",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "clay | -0.41* | 0.39* | -0.08 | -0.46",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "clay | -0.18 | 0 | 0.34 | 0.14",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P020",
+          "quote": "P adsorption became significantly influenced by sandy texture, which resulted in a lower P adsorption",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For cropland soils, CEC, Na+, clay, TP, Olsen-P, CaCO3 and Fec are possible inhibitors of P sorption.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Alakeh2022_P001",
+          "quote": "Te capacity of the soil to adsorb phosphorus significantly correlated positively with amorphous Fe (r 0.953 and p < 0.05), free Fe (r 0.984, 0.976 and p < 0.05), free Al (r 0.994 and p < 0.01, r 0.988 and p < 0.05), and clay (r 0.968 and p < 0.05)",
+          "paper": "Alakeh2022"
+        }
+      ]
+    },
+    {
+      "id": "clay--total_p",
+      "head": "clay",
+      "tail": "total_p",
+      "polarity": "-",
+      "mechanism_hint": "Soils richer in clay retain more P by adsorption, giving better total P treatment.",
+      "evidence": [
+        {
+          "unit_id": "Humphrey2015_P030",
+          "quote": "TP treatment was typically better in soils with higher clay contents",
+          "paper": "Humphrey2015"
+        }
+      ]
+    },
+    {
+      "id": "fe_al_oxide--fe_bound_p",
+      "head": "fe_al_oxide",
+      "tail": "fe_bound_p",
+      "polarity": "+",
+      "mechanism_hint": "Lower Fe concentration in cultivated soil means less applied P is held in the Fe\u2013Al fraction.; Higher Fe levels stimulate P retention in Fe-Al fractions, increasing Fe-bound P.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P021",
+          "quote": "Thus, less P retention in the Fe\u2013Al fraction occurred in cultivated soils presumably as a result of low Fe concentrations and high Ca levels.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "while higher Fe levels stimulated P retention in Fe\u2013Al fractions for pasture",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "fe_al_oxide--labile_p",
+      "head": "fe_al_oxide",
+      "tail": "labile_p",
+      "polarity": "-",
+      "mechanism_hint": "Phosphate sorbs/desorbs on (hydr)oxide surfaces, so more oxide surface holds P out of solution.; Fe and Al oxides provide high-surface-area adsorption sites that bind phosphate and lower dissolved PO4-P.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P027",
+          "quote": "Desorption from (hydr) oxide surfaces is expected to be reversible",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P027",
+          "quote": "This behavior is consistent with sorption/desorption processes governing the PO4\u2013P solubility",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Humphrey2015_P030",
+          "quote": "due to the high surface area and adsorption potential relative to soils with lower clay and Al, Fe, and Mn oxide content",
+          "paper": "Humphrey2015"
+        }
+      ]
+    },
+    {
+      "id": "fe_al_oxide--olsen_p",
+      "head": "fe_al_oxide",
+      "tail": "olsen_p",
+      "polarity": "-",
+      "mechanism_hint": "Soluble Al and Fe react with phosphate ions to form insoluble hydroxyl phosphates, removing P from the available pool.",
+      "evidence": [
+        {
+          "unit_id": "Alakeh2022_P033",
+          "quote": "At low pH values, Al, Fe, and Mn are highly soluble and will react with phosphate ions (H2PO4 \u2013) to form hydroxyl phosphates, which are insoluble and unavailable for plants.",
+          "paper": "Alakeh2022"
+        }
+      ]
+    },
+    {
+      "id": "fe_al_oxide--psi",
+      "head": "fe_al_oxide",
+      "tail": "psi",
+      "polarity": "+",
+      "mechanism_hint": "Poorly-crystalline Fe and Al compounds provide sorption surfaces, so more of them raises the P sorption index.; Poorly crystalline iron oxides formed by sulphide oxidation fix P, raising the P sorption index.; Poorly-crystalline Fe and Al oxides provide reactive sorption surfaces that raise the P sorption index.; Oxalate-extractable Fe and Al oxides supply the sorption surfaces, so their content raises PSI.; Non-crystalline (oxalate-extractable) Fe and Al oxides supply the surfaces that fix P, so more oxide raises the P sorption index.; Oxalate-extractable Fe and Al provide the sorption surfaces, so more of them raises the P sorption index.; Oxalate-extractable Fe and Al oxides provide sorption surfaces that bind phosphate, raising the P sorption index.; PSI is modelled as a function of oxalate-extractable Al + Fe in a regression; direction not given in the caption.; Poorly crystalline Fe and Al oxides expose high specific surface and reactive sites that sorb phosphate, raising PSI.; Oxalate-extractable, non-crystalline Fe and Al oxides provide the main sorption surfaces that raise the P sorption index.; Fe/Al oxides supply the main specific sorption sites for phosphate, so their removal sharply lowers the SPR index.; Oxalate-extractable Fe and Al supply sorption surfaces that retain phosphate, so higher Fe/Al raises the P sorption index.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P019",
+          "quote": "The lowest values correspond to some near-neutral shales, low in poorly-crystalline iron and aluminium compounds. The highest values were found for some surface horizons of topsoiled soils, which are strongly acid, rich in aluminium compounds and relatively rich in iron compounds.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P021",
+          "quote": "this plot has extremely low pH values in the subsurface soil horizon, and also relatively high contents of poorly-crystalline iron oxides",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P021",
+          "quote": "showing perceptibly higher PSI values (ranging from 14 to 42, with a median of 24)",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P021",
+          "quote": "the P fixation on iron oxides resulting from the oxidation of pyrites has been widely reported for mine soils",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P024",
+          "quote": "poorly-crystalline iron and aluminium compounds, show very high PSI values relative to those of shales",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "Log (%A],) | 0.64",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "Log (%Fe,,) | 0.64",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "Log (%A1 + %Fe),, | 0.68",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P029",
+          "quote": "the high correlation between PSI and extractable Fe and Al, especially for oxalate-extractable Fe and Al",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P031",
+          "quote": "In the present case the content of oxalate-extractable Al and Fe accounts for 64.5% of the variance in log PSI.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P037",
+          "quote": "log PSI = 3.562 + 0.519 x log(A1 + Fe), - 0.065 x pH-KC1 + 0.247 x log(org. C)",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_C008",
+          "quote": "Variation of log PSI as a fwtion of log (org. carbon), log (oxalate-Al + Fe), and pH-KCI, respectively",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P042",
+          "quote": "The highest PSI values were found in acid soils made up of organic matter and carbonaceous clays, rich in sulphide and in poorlycrystalline Fe and Al compounds.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P043",
+          "quote": "PSI was found to be highly correlated with oxalate-extractable Fe and Al, organic carbon and pH.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Hosseini2021_P033",
+          "quote": "The SPR index decreased after Fe-Al oxides removal by 47.9 and 22.6% in Orzuiyeh and Baft soils, respectively.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P033",
+          "quote": "organic matter free > untreated soil > carbonates free> Fe-Al oxides free",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Monterroso1996_P002",
+          "quote": "Four soil parameters (oxalate-extractable Fe and Al, pH in KC1 and organic carbon) were shown to explain 79% of the variance in log PSI.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P002",
+          "quote": "log PSI = 3.562 + 0.519 x log(A1 + Fe), - 0.065 x pH-KC1 + 0.247 x log(org. C).",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "fe_al_oxide--qmax",
+      "head": "fe_al_oxide",
+      "tail": "qmax",
+      "polarity": "+",
+      "mechanism_hint": "Fe and Al oxides supply high-affinity surfaces for P adsorption, so dissolving them reduces the sorption maximum.; Fe/Al oxides supply high-affinity sorption sites, so removing them lowers the Langmuir maximum sorption capacity.; Higher Fe-Al oxide content gives more sorption sites, so removing oxides lowers the Langmuir Qmax.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P002",
+          "quote": "Furthermore, the removal of Fe-Al oxides resulted in Qmax reduction in the range of 34.3 and 19.2%.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P022",
+          "quote": "The Fe-Al oxides removal caused a significant (p \u2264 0.05) decrease in the sorption, and the reductions in Qmax values were estimated as 34.3 and 19.2%",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P024",
+          "quote": "The higher decrease in Qmax values after Fe-Al oxides removal in Orzuiyeh soil was possibly attributed to the higher Fe-Al oxides contents compared to the Baft soil",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "fe_al_oxide--sorption_capacity",
+      "head": "fe_al_oxide",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Oxalate-extractable Fe and Al oxides provide sorption sites, so the fitted Freundlich sorption coefficient rises with their summed content.; Poorly-crystalline iron oxides sorb P, complementing the dominant role of Al compounds.; Non-crystalline Fe and Al sesquioxides have high surface area and are the main P sorbing materials, so more of them means higher sorption capacity.; Non-crystalline and organically bound Fe and Al compounds are the dominant P sorbing materials.; Fe-Al oxide surfaces bind phosphate, so more oxide means more P retained.; Fe/Al oxide surfaces adsorb phosphate, so their removal reduces overall P sorption.; CBD-extractable Fe and Al oxides provide sorption sites that bind phosphate, so more oxide raises the soil's P sorption capacity.; Fe/Al oxides provide ligand-exchange sorption sites for phosphate, so removing them lowers P sorption capacity.; Oxide-free soils had the lowest sorption capacity, so Fe/Al oxides supply the main P sorption surfaces.; Fe-Al oxide surfaces provide high-energy sorption sites that retain P and lower desorption.; Fe and Al oxides supply the main P sorption surfaces, so their removal lowers the soil's capacity to retain P and raises desorption.; Fe/Al oxides provide sorption sites and bonding energy for P, so removing them lowers P sorption capacity.; Fe and Al oxides provide the sorption sites that bind P, so their presence raises P sorption capacity.; Free and amorphous Fe/Al oxides provide sorption sites that enhance P adsorption.; Free and amorphous Fe and Al oxides carry high-surface-area, variable-charge sorption sites that bind phosphate, so soils richer in them adsorb more P.; Amorphous and free Fe/Al oxides carry high specific surface and positive charge sites that adsorb phosphate, so more oxide raises the soil's P sorption capacity.; Oxalate-extractable Fe oxides provide the main sorption surfaces, so more Fe oxide gives higher P adsorption capacity.; Oxalate-extractable (noncrystalline) Fe oxides provide sorption sites, so more Fe oxide raises P sorption.; Positively charged Fe oxide surfaces bind phosphate, with oxalate-extractable Fe driving the effect.; Oxalate-extractable Fe/Al oxides provide sorption sites that bind phosphate, so more oxides raise P adsorption.; Oxalate-extractable Fe oxides provide surface hydroxyl groups that adsorb phosphate, so more Feo means more P adsorption.; Fe/Al oxide surfaces adsorb phosphate through ligand exchange, but their sorption strength falls as pH rises.; Fe oxides are a main control on P adsorption, but the free (Fed) and crystallized (Fec) fractions act in opposite directions in these data.; Fe and Fe-Al oxides dominate phosphate adsorption through surface complexation in acidic soils.; Fe-oxides are reported as a major control on P adsorption in acidic and neutral purple soils, but the paper gives no monotonic direction for their effect.; Sesquioxide surfaces saturate, so added P is no longer retained once the oxide sorption sites are filled.; Higher Fe content in pasture soil precipitates more P, giving greater P retention.; Amorphous and free Fe/Al oxides provide sorption surfaces, so more oxide raises P adsorption capacity.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P028",
+          "quote": "well correlated with the sum of oxalate-extractable Fe and Al (r2=0.70).",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Monterroso1996_P017",
+          "quote": "some other materials may be involved in P sorption processes, namely organic matter, clay, poorly-crystalline iron oxides and exchange complexes, particularly at low pH values",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P031",
+          "quote": "The P sorption capacity is particularly high for non-crystalline sesquioxides, decreasing upon its transition towards crystalline compounds (Mengel, 1985).",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P043",
+          "quote": "Non-crystalline Fe compounds and organically bound Fe and Al appear to be the major P sorbing materials, particularly at low pH.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Hosseini2021_P002",
+          "quote": "Overall, the results of the present study revealed that the P sorption capacity of the soils decreased in the presence of the OM and increased in the presence of Fe-Al oxides and carbonates.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P022",
+          "quote": "The Fe-Al oxides removal caused a significant (p \u2264 0.05) decrease in the sorption",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P023",
+          "quote": "These results further clarified that CBD extractable Fe-Al oxides have an important role in the P sorption capacity by the studied soils.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P023",
+          "quote": "It has been demonstrated that Fe-Al oxides have a high P sorption capacity (Fink et al., 2014; Lair et al., 2009).",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P024",
+          "quote": "the soil treatment with the dithionite-citrate reduces the soil P sorption capacity",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P024",
+          "quote": "P sorption capacity in calcareous soils has a significant relationship with the amount of CBD-extractable Fe",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P024",
+          "quote": "P is initially adsorbed on Fe oxide surfaces through ligand exchange reaction",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P025",
+          "quote": "according to their P sorption capacities, the studied soils were ordered as: organic matter free > Untreated soil >carbonates free > Fe-Al oxides free",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P027",
+          "quote": "The OM removal from the soil causes P to be more sorbed on Fe-Al oxide surfaces with high energy and leads to a decrease in the P desorption from the soil.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P029",
+          "quote": "Fe-Al oxides removal reduced the soil P sorption capacity.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P029",
+          "quote": "P desorption decreases with an increment in the amount of Fe-Al oxides in a soil",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P029",
+          "quote": "As a result, according to their desorption rates the studied soils were ordered as: Fe-Al oxides free > carbonates free > untreated soil > organic matter free.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P031",
+          "quote": "These results further clarified that Fe-Al oxides play an important role in the P sorption capacity.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P031",
+          "quote": "Upon the Fe-Al oxides removal, the P sorption capacity and bonding energy decreased",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P035",
+          "quote": "Although Fe-Al oxides are identified to act as the P sorption sites in acidic soils, but their removal from the calcareous soils decreased their P sorption.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P035",
+          "quote": "while it increased in the presence of Fe and Al oxides as well as carbonates",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Alakeh2022_P039",
+          "quote": "higher contents of free and amorphous Fe and Al (Table 1) in the virgin soil compared to the cultivated soils, which enhance P adsorption",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Alakeh2022_P056",
+          "quote": "the capacity of the soil to adsorb phosphorus significantly correlated positively with amorphous Fe (r  0.953 and p < 0.05), free Fe (r  0.984, 0.976 and p < 0.05), free Al (r  0.994 and p < 0.01, r  0.988 and p < 0.05)",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Alakeh2022_P057",
+          "quote": "The capacity of the soil to adsorb phosphorus significantly correlated positively with amorphous Fe (r 0.953 and p < 0.05), free Fe (r 0.984, 0.976 and p < 0.05), free Al (r 0.994 and p < 0.01, r 0.988 and p < 0.05)",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Xiao2017_P002",
+          "quote": "the P adsorption capability was mainly influenced by Fe-oxides and soil texture",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_C007",
+          "quote": "Pearson correlation analysis of physicochemical properties and P sorption under different pHs, parent materials and land uses",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "Feo | 0.69* | 0.01 | 0.29 | 0.65",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "Fed | 0.49* | 0.07 | 0.04 | 0.29",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_C008",
+          "quote": "Feo: noncrystalline Feoxides",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P019",
+          "quote": "P sorption of purple soils showed a significant positive relationship with Fe oxides (especially Fed and Feo)",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P020",
+          "quote": "P adsorption showed a significant positive correlation with Fed and Fec",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P021",
+          "quote": "Only Feo had a positive contribution to P adsorption under pH 4.5 and 6.5.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P022",
+          "quote": "P adsorption observed a significant positive correlation with CEC and Fed at pH 4.5.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P022",
+          "quote": "At pH 6.5, only Feo exhibited a significant positive correlation with P adsorption",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For woodland soils, Mg2+, silt and Fed showed a significant positive relationship with P sorption, while TP, Olsen-P and Fec (crystallized iron oxides) showed a significant negative relationship.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "Generally, P adsorption processes were mainly influenced by organic matter, soil texture, cations and Fe-oxides (Table 3), regardless of parent materials and pH conditions.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "Fe-oxides in cropland soils exhibited similar sorption characteristics as in woodland soils.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "Fe-oxides (and possibly Fe-Al-oxides in most cases) dominated the P adsorption in acidic purple soils (Table 3).",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "showed further P adsorption by Fe-Al-oxides",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "Feoxides and soil texture were the major factors influencing P adsorption in acidic and neutral purple soils.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "purple soils exhibited more complicated P adsorption mechanisms due to the diversity of their parent material and relatively low Fe-oxides content",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "There is a saturation of adsorption capacity by sesquioxide and a high risk of the release of dissoluble reactive P (NH4Cl-P) in acidic and neutral purple soils after the greatest P addition.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P021",
+          "quote": "Thus, the higher Fe content for pasture contributed to a greater P retention capability.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Alakeh2022_P001",
+          "quote": "Te capacity of the soil to adsorb phosphorus significantly correlated positively with amorphous Fe (r 0.953 and p < 0.05), free Fe (r 0.984, 0.976 and p < 0.05), free Al (r 0.994 and p < 0.01, r 0.988 and p < 0.05), and clay (r 0.968 and p < 0.05)",
+          "paper": "Alakeh2022"
+        }
+      ]
+    },
+    {
+      "id": "fe_bound_p--ph",
+      "head": "fe_bound_p",
+      "tail": "ph",
+      "polarity": "-",
+      "mechanism_hint": "At acidic to neutral pH, added P is retained mainly on Fe/Al oxide surfaces, so Fe-Al-P dominates the adsorbed inorganic P.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P024",
+          "quote": "For all P addition treatments, Fe-Al-P occupied over 40% of total adsorbed inorganic phosphorus for acidic and neutral purple soils.",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "fe_bound_p--total_p",
+      "head": "fe_bound_p",
+      "tail": "total_p",
+      "polarity": "0",
+      "mechanism_hint": "Added P is first sorbed into the Fe-Al-bound fraction, but at very high loading that fraction's share saturates and falls while soluble P takes over.; Once sorption saturates at high P loading, the Fe-Al-bound P fraction is depleted while soluble P rises.; P added beyond the organic pool is retained by Fe (and Al) sesquioxides in the Fe-Al bound fraction.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P025",
+          "quote": "The highest percentage of Fe-Al-P was observed for the treatment of 80 mg P g-1 soil.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P025",
+          "quote": "For the 155 mg P g-1 soil treatment, Fe-Al-P reached a P adsorption peak of 13.34 mg P g-1 while decreasing to approximately 40%",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "This release is indicated by the higher proportions of NH4Cl-P (over 40%) and the decreasing Fe-Al-P fraction.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P024",
+          "quote": "increases in labile P and Fe\u2013Al bound P with increasing P rate to a greater extent for pasture than cultivated soils",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "labile_p--om",
+      "head": "labile_p",
+      "tail": "om",
+      "polarity": "+",
+      "mechanism_hint": "Organic acids released during residue decomposition occupy P sorption sites on Fe and Al oxide surfaces, leaving more P in the soil solution.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P019",
+          "quote": "The application of organic residues increased the P content in the soil solution, which could be attributed to the occupation of P adsorption sites on the surfaces of Fe and Al oxides by the organic acids resulting from the decomposition of organic residues",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "labile_p--ph",
+      "head": "labile_p",
+      "tail": "ph",
+      "polarity": "0",
+      "mechanism_hint": "Rising pH reduces PO4-P solubility, while acidification keeps more phosphate in solution.; pH shifts the dissolution/sorption equilibria of phosphate in solution, so dissolved PO4-P follows a non-monotonic response whose shape depends on whether the P is freshly added or field-aged.; A large part of initially bound P is occluded and not immediately reactive, but part of it is mobilized as pH decreases, so P solubility is lowest at pH 6 or higher and rises again at lower pH.; Higher pH increases readsorption of phosphate onto (hydr)oxide surfaces, lowering dissolved PO4-P.; pH shifts the balance between PO4-P sorption and desorption, producing a solubility minimum at near-neutral pH.; A rise in pH after the acid reaction caused part of the dissolved PO4-P to be readsorbed, lowering the dissolved/labile P pool.; As pH rises, P shifts out of the labile pool into Ca-bound forms, lowering the labile fraction.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P021",
+          "quote": "the fertilized D3 sample still displayed increasing PO4\u2013P solubility with lower pH at pHb6.8",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P023",
+          "quote": "the D3 sample had a minimum PO4\u2013P solubility between pH 6.5 and 7, whereas in the A3 sample with P addition, dissolved PO4\u2013P was lowest at low pH, below pH 5.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P023",
+          "quote": "the pH-dependent solubility of P was different depending on whether the P was fresh, i.e. added on the laboratory, or if the P originated from long-term fertilization in the field.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P024",
+          "quote": "These data show an increased sorption with decreasing pH for AsO4, which contrasts with the minimum solubility at pH 6 or higher as observed for initially bound P.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P024",
+          "quote": "part of this occluded P can be mobilized at low pH",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P027",
+          "quote": "The reasons for the increased solubility of initial PO4\u2013P with decreasing pH may be both desorption from (hydr)oxide surfaces and weathering",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P027",
+          "quote": "Dissolved PO4\u2013P was initially very high and then decreased, apparently as a result of the pH increase.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P031",
+          "quote": "the pH-dependent solubility of initially bound PO4\u2013P often displays a minimum between pH 6 and pH 7",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P034",
+          "quote": "a fraction of it was readsorbed when the pH increased due to other processes",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "leading to greater recovery of applied P fertilizer in the Ca-bound P fraction and a decrease in the proportion of applied P recovered in the labile fraction",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "labile_p--sorption_capacity",
+      "head": "labile_p",
+      "tail": "sorption_capacity",
+      "polarity": "-",
+      "mechanism_hint": "Greater adsorption retains added P on the solid phase, lowering the dissoluble reactive P (NH4Cl-P) fraction.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "The greater P adsorption and brushite formation reduced the risk of NH4Cl-P migration after a high dose of P addition.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P030",
+          "quote": "There is a saturation of adsorption capacity by sesquioxide and a high risk of the release of dissoluble reactive P (NH4Cl-P) in acidic and neutral purple soils after the greatest P addition.",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "labile_p--total_p",
+      "head": "labile_p",
+      "tail": "total_p",
+      "polarity": "+",
+      "mechanism_hint": "Lower P addition lets soil minerals fix the little soluble P present, keeping NH4Cl-P low; higher P addition leaves more NH4Cl-P in solution.; Added P that exceeds the soil's retention capacity stays in the readily exchangeable NH4Cl-extractable (labile) pool instead of being sorbed.; P not retained in the humic-fulvic pool, and P released by stimulated mineralization, accumulates in the labile fraction.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P025",
+          "quote": "very low NH4Cl-P in the B2 layer of acidic cropland soil due to the higher P fixation of soil minerals under a lower P addition condition",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P025",
+          "quote": "Cropland soil contained higher NH4Cl-P through the whole profile",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P028",
+          "quote": "a significant increase in NH4Cl-P after P addition at doses greater than 80 mg P g-1 soil in acidic and neutral soils indicated a high risk of P loss",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P024",
+          "quote": "increases in labile P and Fe\u2013Al bound P with increasing P rate to a greater extent for pasture than cultivated soils",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "olsen_p--om",
+      "head": "olsen_p",
+      "tail": "om",
+      "polarity": "+",
+      "mechanism_hint": "Organic residues reduce P sorption and supply mineralized P, raising plant-available P in calcareous soils.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P030",
+          "quote": "Jalali and Ranjbar (2011) reported that the addition of organic residues improved the P availability of the calcareous soils.",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "olsen_p--ph",
+      "head": "olsen_p",
+      "tail": "ph",
+      "polarity": "0",
+      "mechanism_hint": "Adsorption-desorption balance creates a solubility minimum in clay-rich soils; pH shifts the charge and affinity of oxide/clay surfaces for phosphate, so soluble PO4-P passes through a minimum instead of changing monotonically with pH.; Liming raises pH, weakens P sorption, and leaves more phosphate in plant-available form.; Acidic conditions keep Al and Fe soluble so they precipitate phosphate as insoluble hydroxyl phosphates, lowering plant-available P; raising pH relieves this.; High acidity (low pH) keeps P unavailable, so raising pH toward neutral increases plant-available P.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P002",
+          "quote": "minimum in phosphate solubility between pH 5.5 and 7 in non-calcareous soils",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P039",
+          "quote": "For soils with a high clay content, there was a minimum PO4\u2013P solubility between pH 6 and 7.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P039",
+          "quote": "For sandy soils, such a minimum solubility was not observed.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P039",
+          "quote": "Under these conditions, the least P was dissolved at very low pH.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Monterroso1996_P033",
+          "quote": "increasing pH by liming has proved to have beneficial effects on phosphorus availability",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Alakeh2022_P033",
+          "quote": "These low P concentrations may be associated with the acidic nature of the soil.",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Alakeh2022_P033",
+          "quote": "At low pH values, Al, Fe, and Mn are highly soluble and will react with phosphate ions (H2PO4 \u2013) to form hydroxyl phosphates, which are insoluble and unavailable for plants.",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Alakeh2022_P001",
+          "quote": "In volcanic-influenced soils, usually characterized by high acidity, phosphorus is often not readily available to plants",
+          "paper": "Alakeh2022"
+        }
+      ]
+    },
+    {
+      "id": "olsen_p--psi",
+      "head": "olsen_p",
+      "tail": "psi",
+      "polarity": "-",
+      "mechanism_hint": "Stronger P sorption retains phosphate, leaving less P in the available pool.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P024",
+          "quote": "This high P sorption capacity in the CS area concurs with the low P availability in these soils.",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "olsen_p--sorption_capacity",
+      "head": "olsen_p",
+      "tail": "sorption_capacity",
+      "polarity": "-",
+      "mechanism_hint": "Higher P sorption raises fertilization requirements, so more heavily fertilized plots end up with higher available P.; High available P means more sites are already filled, which lowers further sorption potential.; High available P means sorption sites are already partly filled, lowering further sorption.; Strong P sorption fixes P into poorly available forms, leaving less Olsen-extractable P in solution.; Strong sorption and precipitation immobilize phosphate, lowering the P fraction available to plants.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P027",
+          "quote": "The higher P sorption, where topsoiling was combined with ash amendment, will cause higher P fertilization demands",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P027",
+          "quote": "these areas have in fact been more strongly fertilized (plot T.AC), so they have high levels of available phosphorus",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "Olsen-P | 0.11 | -0.05 | -0.15 | 0.75",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "Olsen-P | -0.05 | -0.04 | -0.38 | -0.5",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "while TP, Olsen-P and Fec (crystallized iron oxides) showed a significant negative relationship",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For cropland soils, CEC, Na+, clay, TP, Olsen-P, CaCO3 and Fec are possible inhibitors of P sorption.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P029",
+          "quote": "Our results showed that higher adsorption capacities did not lead to higher TP or Olsen-P contents; these two soil parameters even had significant negative relationships with P adsorption (Table 3).",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Alakeh2022_P001",
+          "quote": "Te main reason for the limited bioavailability of soil P is its high immobilization (sorption and precipitation) rate and its slow release into the soil solution",
+          "paper": "Alakeh2022"
+        }
+      ]
+    },
+    {
+      "id": "om--organic_p",
+      "head": "om",
+      "tail": "organic_p",
+      "polarity": "0",
+      "mechanism_hint": "Humic\u2013fulvic acid P is organic P held within organic matter, so its turnover tracks organic matter decomposition rather than a change in organic matter level.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P023",
+          "quote": "The humic\u2013fulvic acid fraction represents P associated with organic matter or as part of decomposed plant material.",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P023",
+          "quote": "organic matter decomposition exceeds the rate of organic matter deposition, so there likely is a large turnover of humic\u2013fulvic acid P for both land uses.",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "om--ph",
+      "head": "om",
+      "tail": "ph",
+      "polarity": "-",
+      "mechanism_hint": "Organic matter accumulation in surface horizons acidifies the soil, lowering pH.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_P016",
+          "quote": "except a lower pH in surface layers due to higher contents of OM",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "om--psi",
+      "head": "om",
+      "tail": "psi",
+      "polarity": "+",
+      "mechanism_hint": "Organic carbon is associated with organically bound Al/Fe sorption surfaces, raising PSI.; Organic matter provides sorption sites and its correlation with the P sorption index is the strongest among the soil properties tested.; P sorbs onto Al-humus complexes and phosphate precipitates with Al previously held by organic matter, so more organic C raises the P sorption index.; Organic matter contributes to P retention through organo-mineral associations and blocking of sorption sites on oxides.; PSI is modelled as a function of organic carbon in a regression; direction not given in the caption.; Soils built from organic matter showed the highest PSI, while low organic carbon soils had the lowest sorbing capacity, implying a positive association.; Organic carbon is correlated with PSI, partly through organically bound Fe and Al acting as P sorbing material.; OM removal changes PSI in opposite directions depending on land use, via OM association with Al and Fe rather than direct P binding.; Organic carbon associates with Fe and Al, forming organo-mineral complexes with additional phosphate sorption sites, raising the sorption index.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "Log (%C) | 0.74",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P030",
+          "quote": "The correlation of PSI to organic carbon is also very high",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P032",
+          "quote": "In the present study, the organic carbon content alone explains 55% of the variance in log PSI.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P032",
+          "quote": "The sorption seems to take place through linkage of phosphorus to Alhumus complexes (Pa&t et al., 1989) or precipitation of phosphate with Al previously held by organic matter",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P037",
+          "quote": "log PSI = 3.562 + 0.519 x log(A1 + Fe), - 0.065 x pH-KC1 + 0.247 x log(org. C)",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_C008",
+          "quote": "Variation of log PSI as a fwtion of log (org. carbon), log (oxalate-Al + Fe), and pH-KCI, respectively",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P042",
+          "quote": "The highest PSI values were found in acid soils made up of organic matter and carbonaceous clays, rich in sulphide and in poorlycrystalline Fe and Al compounds.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P042",
+          "quote": "The soils having the lowest P sorbing capacity are made up of shales, low in non-crystalline compounds, organic carbon and clay.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P043",
+          "quote": "PSI was found to be highly correlated with oxalate-extractable Fe and Al, organic carbon and pH.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Hosseini2021_P018",
+          "quote": "McDowell and Condron (2001) reported that with the OM removal, the value of P sorption index (PSI) increases and decreases in the arable and grassland soils, respectively.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Monterroso1996_P002",
+          "quote": "log PSI = 3.562 + 0.519 x log(A1 + Fe), - 0.065 x pH-KC1 + 0.247 x log(org. C).",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "om--qmax",
+      "head": "om",
+      "tail": "qmax",
+      "polarity": "-",
+      "mechanism_hint": "Organic matter occupies and blocks P sorption sites, so its removal frees sites and raises the maximum sorption capacity.; Removing organic matter increased the Langmuir maximum sorption capacity, so higher OM corresponds to lower Qmax.; Organic matter coatings and organic anions block oxide and carbonate sorption sites, so removing organic matter increases the Langmuir sorption maximum.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P002",
+          "quote": "Results indicated that removal of OM increased the maximum P sorption capacity (Qmax) of the soils by 42 and 69 mg kg-1.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P017",
+          "quote": "The increased amounts of Qmax obtained from the Langmuir equation after removing OM were about 42 and 69 mg kg-1 in Orzuiyeh and Baft soils, respectively",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_T003",
+          "quote": "Untreated | 668b | 0.097c | 0.967 | 0.035 | 85.9b | 0.545a | 0.989 | 0.020 | Organic matter free | 710a | 0.106b | 0.987 | 0.022",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_T003",
+          "quote": "Untreated | 537 e | 0.087d | 0.994 | 0.012 | 64.0c | 0.536a | 0.973 | 0.026 | Organic matter free | 606c | 0.115a | 0.997 | 0.009",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "om--silt",
+      "head": "om",
+      "tail": "silt",
+      "polarity": "+",
+      "mechanism_hint": "Organic matter co-varies with silt: finer, silt-rich horizons hold more organic matter through sorption and aggregate protection, so soils higher in silt also test higher in OM.",
+      "evidence": [
+        {
+          "unit_id": "Alakeh2022_T003",
+          "quote": "Silt | 0.504 | \u22120.838 | 0.964\u2217",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Alakeh2022_C012",
+          "quote": "\u2217Correlation is significant at the 0.05 level (two-tailed).",
+          "paper": "Alakeh2022"
+        }
+      ]
+    },
+    {
+      "id": "om--sorption_capacity",
+      "head": "om",
+      "tail": "sorption_capacity",
+      "polarity": "-",
+      "mechanism_hint": "Organic matter provides additional surfaces/ligands that take part in P retention alongside Al compounds.; Organic matter provides sorption sites and complexes with poorly crystalline oxides, so low organic carbon leaves fewer P retention surfaces.; OM blocks sorption sites and competes for them, lowering the soil's overall P retention.; Organic matter removal frees sorption sites (and removes organic-blocking or complexing effects), so P sorption rises when OM falls.; OM occupies P sorption sites and competes with P for sorption on Fe/Al oxide surfaces, so removing OM frees active sites and raises sorption capacity.; Removing organic matter raised P sorption capacity, so organic matter blocks or competes for sorption sites.; Organic matter competes with phosphate for sorption sites and blocks Fe/Al oxide surfaces, so removing OM frees sorption sites and raises P sorption capacity.; Organic matter coats or blocks Fe-Al oxide surfaces, so removing OM exposes high-energy sorption sites and increases P sorption.; Organic matter coats sorption surfaces and competes with phosphate for Fe/Al sorption sites, lowering the P sorption capacity (reported as PMBC); removing OM therefore raises PMBC.; Organic matter removal increased the P requirement, so higher OM lowers the sorption requirement, likely by blocking sorption sites and supplying complexing organic anions.; Organic matter blocks or competes for Fe/Al sorption sites, so removing OM exposes sites and raises P sorption capacity.; Organic matter blocks or competes for P sorption sites, so its removal exposes Fe-Al oxide surfaces and raises P sorption.; Organic matter blocks or competes for P sorption sites, lowering the soil's P sorption capacity.; Organic matter can block oxide surfaces and complex Fe/Al, competing with or reducing P sorption.; Organic matter is one of the main controls on P adsorption, but the units only report the strength of the correlation, not its sign.; Organic matter inhibits oxide crystallization and exposes more sorption surface, raising phosphate adsorption capacity.; Organic matter accretion under flooding raises P retention, i.e. more sorption capacity.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P017",
+          "quote": "some other materials may be involved in P sorption processes, namely organic matter, clay, poorly-crystalline iron oxides and exchange complexes, particularly at low pH values",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P021",
+          "quote": "because of the presence of only slightly weathered materials, and being low in non-crystalline components, organic carbon and clay",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Hosseini2021_P002",
+          "quote": "Overall, the results of the present study revealed that the P sorption capacity of the soils decreased in the presence of the OM and increased in the presence of Fe-Al oxides and carbonates.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P017",
+          "quote": "Upon the OM removal, the P sorption increased (p \u2264 0.05) in the studied soils.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P018",
+          "quote": "The increase in soil P sorption capacity after OM removal could be attributed to the increase in its active sorption sites.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P018",
+          "quote": "indicating that OM occupies the P sorption sites and inhibits P adsorption through competitive sorption",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P018",
+          "quote": "The negative charged functional groups in the organic substances such as carboxylic and phenolic groups can compete for P sorption sites and alter the surface charges of Al and Fe oxides causing the P ions to be electrostatically repelled",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P025",
+          "quote": "according to their P sorption capacities, the studied soils were ordered as: organic matter free > Untreated soil >carbonates free > Fe-Al oxides free",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P026",
+          "quote": "the OM removal led to an increment in the soil P sorption capability",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P027",
+          "quote": "The OM removal from the soil causes P to be more sorbed on Fe-Al oxide surfaces with high energy and leads to a decrease in the P desorption from the soil.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P030",
+          "quote": "As can be seen from Table 5, the OM removal from the soil increased (p \u2264 0.05) PMBC values in both studied soils by 16.2 and 49.2%, respectively.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P030",
+          "quote": "Some studies have shown that increasing OM in the soil reduces the P sorption (Prakash et al., 2017) and PMBC (Maluf et al., 2018).",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P032",
+          "quote": "Organic matter removal significantly increased the P requirement by 15.7 and 28% in Orzuiyeh and Baft soils, respectively.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P033",
+          "quote": "The OM removal led to an increase in the P sorption capacity of the studied soils.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P034",
+          "quote": "The removal of OM from the studied soils led to increase in P sorption due to the activation of sorption sites in Fe-Al oxides and hydroxides and newly formed ones on the mineral surfaces.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Hosseini2021_P035",
+          "quote": "The results of this study indicated that the P sorption capacity decreased in presence of organic matter, while it increased in the presence of Fe and Al oxides as well as carbonates.",
+          "paper": "Hosseini2021"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "OM | 0.02 | 0.11 | 0.04 | 0.02",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "OM | -0.55 | -0.39 | -0.57 | 0.43",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "Generally, P adsorption processes were mainly influenced by organic matter, soil texture, cations and Fe-oxides (Table 3), regardless of parent materials and pH conditions.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "Woodland soils showed a stronger correlation between P sorption and OM contents.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "OM showed a significant positive relationship with P sorption for woodland and cropland soil, although the relationship is not evident under a specific pH and parent material.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "organic matter inhibited the crystallization of oxides and thereby significantly increased phosphate adsorption capacity",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Castillo2008_P019",
+          "quote": "organic matter accretion (Moore and Reddy, 1994), thereby increasing P retention",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "om--total_p",
+      "head": "om",
+      "tail": "total_p",
+      "polarity": "-",
+      "mechanism_hint": "Relieving microbial P limitation by fertilization stimulates heterotrophic decomposition of soil organic matter.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P024",
+          "quote": "Because of no prior fertilization for pasture, heterotrophic microorganisms may have been limited by P, thus fertilization may stimulate organic matter decomposition and P mineralization",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "organic_p--ph",
+      "head": "organic_p",
+      "tail": "ph",
+      "polarity": "0",
+      "mechanism_hint": "At low pH P accumulates in humic-fulvic acid (organic) fractions, while at high pH it accumulates in Ca-bound fractions, so the direction depends on land use.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P026",
+          "quote": "while increasing concentrations in humic\u2013fulvic acid fractions for the low pH pasture soil",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "organic_p--total_p",
+      "head": "organic_p",
+      "tail": "total_p",
+      "polarity": "0",
+      "mechanism_hint": "Added P can stimulate microbial mineralization of the humic-fulvic (organic) P pool, but in cultivated soil the pool size did not respond to P rate.",
+      "evidence": [
+        {
+          "unit_id": "Castillo2008_P024",
+          "quote": "Soil P concentrations in the humic\u2013fulvic acid fraction were not affected by P application rate, but were significantly higher for pasture than cultivated soils",
+          "paper": "Castillo2008"
+        },
+        {
+          "unit_id": "Castillo2008_P024",
+          "quote": "thus fertilization may stimulate organic matter decomposition and P mineralization (Wright and Reddy, 2001), resulting in lower concentrations in humic\u2013fulvic acid fractions and higher concentrations in Fe\u2013Al and labile fractions",
+          "paper": "Castillo2008"
+        }
+      ]
+    },
+    {
+      "id": "ph--psi",
+      "head": "ph",
+      "tail": "psi",
+      "polarity": "-",
+      "mechanism_hint": "Acid soils carry more active Al and Fe sorption surfaces, so PSI rises as pH falls across the sampled range.; Low pH promotes P fixation by poorly crystalline iron oxides, so more acidic soils show higher P sorption.; Higher pH shifts sorbed phosphate toward the solution phase, lowering the P sorption index.; Soil pH governs the surface charge and speciation of Fe/Al hydroxyls, so it ranks among the properties correlated with the P sorption index.; In alkaline samples Ca phosphate precipitation adds a removal pathway, so PSI rises instead of falling with pH.; Higher pH shifts oxide surface charge toward negative and favors phosphate desorption, lowering the P sorption index.; PSI is modelled as a function of pH-KCl in a regression; direction not given in the caption.; Acid sulphide-bearing dump soils weather to poorly crystalline Fe/Al phases with high sorption, so lower pH coincides with higher PSI.; Sorption on Fe and Al surfaces weakens as pH rises because surface charge becomes more negative.; Raising soil pH reduces P sorption (lower PSI), likely by making Fe/Al oxide surfaces less protonated and more negatively charged, which weakens phosphate retention.; Higher pH increases negative charge on oxide surfaces and promotes ligand exchange competition, lowering phosphate retention and thus the sorption index.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P019",
+          "quote": "The lowest values correspond to some near-neutral shales, low in poorly-crystalline iron and aluminium compounds. The highest values were found for some surface horizons of topsoiled soils, which are strongly acid, rich in aluminium compounds and relatively rich in iron compounds.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P021",
+          "quote": "this plot has extremely low pH values in the subsurface soil horizon, and also relatively high contents of poorly-crystalline iron oxides",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_T002",
+          "quote": "PH (=I) | -0.49",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P030",
+          "quote": "and soil pH",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P033",
+          "quote": "a few alkaline samples show rather high PSI values, which might be explained by P precipitation in the form of calcium phosphates",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P037",
+          "quote": "log PSI = 3.562 + 0.519 x log(A1 + Fe), - 0.065 x pH-KC1 + 0.247 x log(org. C)",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_C008",
+          "quote": "Variation of log PSI as a fwtion of log (org. carbon), log (oxalate-Al + Fe), and pH-KCI, respectively",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P042",
+          "quote": "The highest PSI values were found in acid soils made up of organic matter and carbonaceous clays, rich in sulphide and in poorlycrystalline Fe and Al compounds.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P043",
+          "quote": "Non-crystalline Fe compounds and organically bound Fe and Al appear to be the major P sorbing materials, particularly at low pH.",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P044",
+          "quote": "the significant decrease in P sorption by increasing the soil pH",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P002",
+          "quote": "log PSI = 3.562 + 0.519 x log(A1 + Fe), - 0.065 x pH-KC1 + 0.247 x log(org. C).",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "ph--sorption_capacity",
+      "head": "ph",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Anion (phosphate) adsorption on clay surfaces is protonation-driven, so lower pH favours adsorption, but the pH dependence differed between native P-depleted and P/As-amended systems.; Acidification dissolves hydroxy-Al/Fe interlayers of clay minerals, which releases bound P, but also exposes new interlayer sites where P can re-adsorb or be occluded.; Higher pH lowers the positive charge on Al-bearing surfaces, so fewer sorption sites remain for phosphate.; Higher acidity (lower pH) increases P adsorption, so raising pH lowers sorption capacity.; Lower pH reduces the net negative charge and ligand-exchange sites available for P retention, so P adsorption capacity falls as pH drops.; Higher pH (alkaline conditions) is associated with stronger P adsorption, likely through enhanced Ca-driven retention.; Higher pH shifts retention toward Ca- and texture-related mechanisms, giving higher adsorption in neutral and calcareous soils than in acidic ones.; Rising pH makes oxide surfaces more negatively charged and reduces the Fe-oxide contribution to phosphate sorption.; Higher pH increased measured P adsorption across all incubated soils.",
+      "evidence": [
+        {
+          "unit_id": "Gustafsson2012_P032",
+          "quote": "the results for systems in which P or As was added are in much better agreement with the commonly perceived view that anion adsorption increases with decreasing pH.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P038",
+          "quote": "On acidification, interlayers will start to dissolve which will (i) reduce the total amount of the sorbent, leading to desorption of P bound to these interlayers",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Gustafsson2012_P038",
+          "quote": "These factors taken together may account for the contrasting pH dependences of P/As sorption and desorption in the batch experiments.",
+          "paper": "Gustafsson2012"
+        },
+        {
+          "unit_id": "Monterroso1996_P033",
+          "quote": "An inverse relationship is to be expected between P sorption and pH",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Monterroso1996_P033",
+          "quote": "pH undoubtedly influences P sorption by modifying the positive charge and its relationship to active forms of aluminium",
+          "paper": "Monterroso1996"
+        },
+        {
+          "unit_id": "Alakeh2022_P039",
+          "quote": "This could be explained by the higher acidity (low pH) and higher contents of free and amorphous Fe and Al (Table 1) in the virgin soil compared to the cultivated soils, which enhance P adsorption.",
+          "paper": "Alakeh2022"
+        },
+        {
+          "unit_id": "Xiao2017_P002",
+          "quote": "Agricultural practices and lower pH conditions reduced the P adsorption capacity of purple soils throughout the soil profiles.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P018",
+          "quote": "The maximum adsorption appears in neutral soil under pH 8.4, and the minimum adsorption appears in calcareous soil under pH 4.5 (Table 2).",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P018",
+          "quote": "Generally, it is suggested that alkaline environments favor P adsorption processes (Table 2)",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P020",
+          "quote": "which resulted in a lower P adsorption of acidic soils compared with neutral and calcareous purple soils",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P022",
+          "quote": "The effects of Fe-oxides on P adsorption decreased with increasing pH, also indicating that a stronger sorption occurred under acidic conditions",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P027",
+          "quote": "However, a higher pH increased P adsorption for all of the soils in the incubation experiment (Table 2).",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "psi--silt",
+      "head": "psi",
+      "tail": "silt",
+      "polarity": "0",
+      "mechanism_hint": "Fine silt shares the reactive mineral surface area of the fine-textured fraction, so it co-varies with the P sorption index.",
+      "evidence": [
+        {
+          "unit_id": "Monterroso1996_P030",
+          "quote": "line-textured fractions (clay + tine silt)",
+          "paper": "Monterroso1996"
+        }
+      ]
+    },
+    {
+      "id": "psi--sorption_capacity",
+      "head": "psi",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Soils with a larger pool of sorption sites retain more P, so the P sorption index rises with sorption capacity.",
+      "evidence": [
+        {
+          "unit_id": "Hosseini2021_P033",
+          "quote": "soils with higher P sorption capacities have higher SPR values",
+          "paper": "Hosseini2021"
+        }
+      ]
+    },
+    {
+      "id": "silt--sorption_capacity",
+      "head": "silt",
+      "tail": "sorption_capacity",
+      "polarity": "+",
+      "mechanism_hint": "Silt-sized particles carry surface area and secondary minerals that add P sorption sites.; Fine silt-sized particles add surface area for phosphate adsorption.; Silt offers a larger surface contact area than sand, giving more sites for P adsorption.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_C007",
+          "quote": "Pearson correlation analysis of physicochemical properties and P sorption under different pHs, parent materials and land uses",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "silt | 0.42* | 0.42* | 0.48* | 0.68",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P019",
+          "quote": "silt showed a significant positive correlation under all pH conditions",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For woodland soils, Mg2+, silt and Fed showed a significant positive relationship with P sorption",
+          "paper": "Xiao2017"
+        }
+      ]
+    },
+    {
+      "id": "sorption_capacity--total_p",
+      "head": "sorption_capacity",
+      "tail": "total_p",
+      "polarity": "-",
+      "mechanism_hint": "Already-sorbed P raises the solution concentration and can either saturate sites or reflect prior sorption.; Soils already high in total P have more of their sorption sites occupied, leaving less capacity to adsorb added P.; Soils already rich in total P have less capacity to retain further P, so sorption falls as TP rises.; Greater P addition loads the soil with soluble P, so the soil's P adsorption capacity measured for NH4Cl-P rises with agricultural P inputs.; Soils retaining P more strongly keep less P in the total soil P pool, so high adsorption capacity coincides with lower TP.",
+      "evidence": [
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "TP | 0.28 | -0.24 | 0.06 | 0.23",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_T004",
+          "quote": "TP | -0.45 | -0.13 | -0.25 | -0.44",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P021",
+          "quote": "TP and sand contents had a negative relationship with P adsorption and only show significance at pH 8.4.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "while TP, Olsen-P and Fec (crystallized iron oxides) showed a significant negative relationship",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P023",
+          "quote": "For cropland soils, CEC, Na+, clay, TP, Olsen-P, CaCO3 and Fec are possible inhibitors of P sorption.",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P025",
+          "quote": "agricultural practices in cropland increased the adsorption capacity of soluble P (NH4Cl-P) under greater amounts of P addition (Table 4)",
+          "paper": "Xiao2017"
+        },
+        {
+          "unit_id": "Xiao2017_P029",
+          "quote": "Our results showed that higher adsorption capacities did not lead to higher TP or Olsen-P contents; these two soil parameters even had significant negative relationships with P adsorption (Table 3).",
+          "paper": "Xiao2017"
+        }
+      ]
+    }
+  ]
+}

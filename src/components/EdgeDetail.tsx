@@ -30,8 +30,8 @@ function PaperGroup({ paper, items }: { paper: string; items: GraphEdge['evidenc
       </button>
       {open && (
         <>
-          {items.slice(0, shown).map((e) => (
-            <EvidenceCard key={e.unit_id} evidence={e} />
+          {items.slice(0, shown).map((e, i) => (
+            <EvidenceCard key={`${paper}-${i}`} evidence={e} />
           ))}
           {canExpand && !expanded && (
             <button
@@ -70,7 +70,7 @@ export default function EdgeDetail({ edge }: { edge: GraphEdge }) {
       )}
       <div className="mt-3 text-[13px] font-medium text-neutral-800">共 {edge.evidence.length} 条证据</div>
       {groupEvidence(edge.evidence).map((g) => (
-        <PaperGroup key={g.paper} paper={g.paper} items={g.items} />
+        <PaperGroup key={`${edge.id}-${g.paper}`} paper={g.paper} items={g.items} />
       ))}
     </div>
   );

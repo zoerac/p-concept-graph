@@ -18,6 +18,9 @@ npm run build
 
 # 预览构建产物
 npm run preview
+
+# 测试（36 个用例）
+npm test
 ```
 
 ## 项目结构
@@ -27,6 +30,10 @@ src/
 ├── App.tsx                    # 主入口，布局
 ├── context/
 │   └── GraphContext.tsx       # 全局状态（选中节点/边）
+├── lib/                       # 纯逻辑（有单测）
+│   ├── layout.ts              # 坐标映射与层背景框
+│   ├── highlight.ts           # 邻接索引与高亮集合
+│   └── evidence.ts            # 证据分组与折叠策略
 ├── components/
 │   ├── GraphCanvas.tsx        # SVG 画布（节点 + 边 + 层背景框）
 │   ├── Node.tsx               # 单个节点
@@ -50,7 +57,7 @@ src/
 
 ## 数据
 
-数据来源：`/Users/zyc/Desktop/relation_locator_interactive_demo/graph_data.json`，已复制至 `src/data/`。格式：
+数据为构建期冻结的 `src/data/graph_data.json`（17 节点 / 50 边 / 290 条证据），运行时零网络请求。**不要修改此文件**，格式：
 
 ```json
 {

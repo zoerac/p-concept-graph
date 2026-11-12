@@ -44,3 +44,17 @@ spec §3 的 `screenX = x*1000` / `screenY = y*600` 在 v2 中改为带内边距
 | 10 | 质量门 | 通过：81/81 测试、`npx tsc -b` 零错误、`npm run lint` 无 error、`npm run build` 成功 | `npx vitest run`、`npx tsc -b`、`npm run lint`、`npm run build`。 |
 
 筛选面板实现后全套测试从原 39 项增至 81 项。lint 输出 4 条 warning（Fast Refresh 导出与测试 hook 依赖提示），无 error。
+
+## 侧栏宽度可拖（2026-11-12）
+
+| # | 标准 | 结果 | 证据 |
+|---|---|---|---|
+| 1 | 可拖动且夹取边界 | 通过：指针位移增量拖动，宽度夹在 320–720px | `src/components/ResizeHandle.test.tsx`：`widens when dragged left and narrows when dragged right`、`clamps to the allowed range`；浏览器实测 420→520、越界夹到 320/720 |
+| 2 | 宽度可保存并恢复 | 通过：拖动结束写入 localStorage，刷新后恢复 | `src/App.test.tsx`：`persists the sidebar width and restores it on remount`；浏览器实测拖到 380px，刷新仍为 380px |
+| 3 | 损坏存储回退 | 通过：`NaN`、负数、超范围、非数字均回落并夹取 | `src/App.test.tsx`：`falls back to the default width when storage is corrupt` |
+| 4 | 键盘可调整 | 通过：`←`/`→` ±16px，`Home`/`End` 到 320/720 | `src/components/ResizeHandle.test.tsx`：`responds to arrow keys and Home/End`；浏览器实测 |
+| 5 | 320px 下不溢出 | 通过：`scrollWidth === clientWidth`，极性 chip 自动换行 | 浏览器实测 |
+| 6 | 画布随宽度缩放 | 通过：`viewBox` 缩放，无横向滚动条 | 浏览器实测 320 / 420 / 720 三档 |
+| 7 | 无回归且构建达标 | 通过：89/89 测试；`npx tsc -b` 零错误；lint 0 error；构建成功，JS gzip 91.56 kB | `npx vitest run`、`npx tsc -b`、`npm run lint`、`npm run build` |
+
+节点布局与边配色保持 v2 原样（网格布局、`opacity` 0.3、线宽 1.5、无虚线）。曾评估过的节点错位与高对比配色方案未采用，记录见研究仓库 `docs/superpowers/specs/2026-11-12-layout-color-polish-design.md`。

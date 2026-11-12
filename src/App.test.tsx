@@ -44,3 +44,30 @@ describe('App end-to-end interaction', () => {
     expect(screen.getByTestId('empty-filter-hint')).toHaveTextContent('当前筛选无匹配边 · 点右上「重置」恢复');
   });
 });
+
+it('persists the sidebar width and restores it on remount', () => {
+  localStorage.clear();
+  const first = render(<App />);
+  expect(screen.getByTestId('sidebar')).toHaveStyle({ width: '420px' });
+  const handle = screen.getByTestId('resize-handle');
+  fireEvent.pointerDown(handle, { clientX: 800, pointerId: 1 });
+  fireEvent.pointerMove(handle, { clientX: 700, pointerId: 1 });
+  fireEvent.pointerUp(handle, { clientX: 700, pointerId: 1 });
+  expect(screen.getByTestId('sidebar')).toHaveStyle({ width: '520px' });
+  expect(localStorage.getItem('p-graph:sidebar-width')).toBe('520');
+  first.unmount();
+
+  render(<App />);
+  expect(screen.getByTestId('sidebar')).toHaveStyle({ width: '520px' });
+});
+
+it('falls back to the default width when storage is corrupt', () => {
+  for (const bad of ['NaN', '-5', '9999', 'abc']) {
+    localStorage.setItem('p-graph:sidebar-width', bad);
+    const { unmount } = render(<App />);
+    const w = Number.parseFloat(screen.getByTestId('sidebar').style.width);
+    expect(w).toBeGreaterThanOrEqual(320);
+    expect(w).toBeLessThanOrEqual(720);
+    unmount();
+  }
+});

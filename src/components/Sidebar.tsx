@@ -15,12 +15,12 @@ function Legend() {
   );
 }
 
-export default function Sidebar() {
+export default function Sidebar({ width = 420 }: { width?: number }) {
   const { data, selection } = useGraph();
   const edge = selection.type === 'edge' ? data.edges.find((e) => e.id === selection.id) : undefined;
 
   return (
-    <aside className="flex w-[420px] shrink-0 flex-col gap-3 border-l border-neutral-200 bg-[#fafafa] p-4">
+    <aside data-testid="sidebar" style={{ width }} className="flex shrink-0 flex-col gap-3 overflow-hidden border-l border-neutral-200 bg-[#fafafa] p-4">
       <section data-testid="filter-card" className="shrink-0 rounded-lg bg-white p-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
         <FilterPanel />
       </section>

@@ -6,6 +6,8 @@
 
 2026-11-12 已部署到Github pages。
 
+Github pages： https://zoerac.github.io/p-concept-graph/
+
 本地调试：
 
 需要 Node.js 18 或更高版本。

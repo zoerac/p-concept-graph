@@ -2,15 +2,22 @@ import { useGraph } from '../context/GraphContext';
 import { POLARITY_COLOR } from './Edge';
 
 export default function NodeDetail({ nodeId }: { nodeId: string }) {
-  const { data, toggleEdge } = useGraph();
+  const { data, visibleData, toggleEdge } = useGraph();
   const node = data.nodes.find((n) => n.id === nodeId);
-  const edges = data.edges.filter((e) => e.head === nodeId || e.tail === nodeId);
+  const all = data.edges.filter((e) => e.head === nodeId || e.tail === nodeId);
+  const edges = visibleData.edges.filter((e) => e.head === nodeId || e.tail === nodeId);
+  const hidden = all.length - edges.length;
   const label = (id: string) => data.nodes.find((n) => n.id === id)?.label ?? id;
 
   return (
     <div>
       <h2 className="text-xl font-bold text-neutral-900">{node?.label ?? nodeId}</h2>
       <div className="mt-1 text-[13px] text-neutral-500">共 {edges.length} 条关联边</div>
+      {hidden > 0 && (
+        <div data-testid="hidden-count" className="mt-0.5 text-[11px] text-neutral-500">
+          已按筛选隐藏 {hidden} 条
+        </div>
+      )}
       <div className="mt-3 flex flex-col gap-2">
         {edges.map((e) => (
           <button

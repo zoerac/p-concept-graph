@@ -6,18 +6,18 @@ import Edge from './Edge';
 import Node from './Node';
 
 export default function GraphCanvas() {
-  const { data, selection, toggleNode, toggleEdge, clear } = useGraph();
+  const { data, visibleData, selection, toggleNode, toggleEdge, clear } = useGraph();
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [hoveredEdge, setHoveredEdge] = useState<string | null>(null);
 
-  const byId = useMemo(() => new Map(data.nodes.map((n) => [n.id, n])), [data.nodes]);
-  const sets = useMemo(() => highlightSets(data, selection), [data, selection]);
+  const byId = useMemo(() => new Map(visibleData.nodes.map((n) => [n.id, n])), [visibleData.nodes]);
+  const sets = useMemo(() => highlightSets(visibleData, selection), [visibleData, selection]);
   const visible = (ids: Set<string> | null, id: string) => ids === null || ids.has(id);
 
   const selectedEdgeId = selection.type === 'edge' ? selection.id : null;
   const orderedEdges = [
-    ...data.edges.filter((e) => e.id !== selectedEdgeId),
-    ...data.edges.filter((e) => e.id === selectedEdgeId),
+    ...visibleData.edges.filter((e) => e.id !== selectedEdgeId),
+    ...visibleData.edges.filter((e) => e.id === selectedEdgeId),
   ];
 
   return (
@@ -50,6 +50,20 @@ export default function GraphCanvas() {
         );
       })}
 
+      {visibleData.edges.length === 0 && (
+        <text
+          data-testid="empty-filter-hint"
+          x={VIEW_W / 2}
+          y={VIEW_H / 2}
+          textAnchor="middle"
+          fontSize={13}
+          fill="#888"
+          pointerEvents="none"
+        >
+          当前筛选无匹配边 · 点右上「重置」恢复
+        </text>
+      )}
+
       {orderedEdges.map((edge) => {
         const head = byId.get(edge.head);
         const tail = byId.get(edge.tail);
@@ -70,7 +84,7 @@ export default function GraphCanvas() {
         );
       })}
 
-      {data.nodes.map((node) => {
+      {visibleData.nodes.map((node) => {
         const hovered = hoveredNode === node.id;
         return (
           <Node

@@ -27,3 +27,20 @@ spec §3 的 `screenX = x*1000` / `screenY = y*600` 在 v2 中改为带内边距
 - 与 v1 `index.html` 的并排像素级比对。
 - 真实浏览器下的 hover 观感（加粗、tooltip 延迟）。
 - 1100px 宽窗口下的并排布局观感。
+
+## 筛选面板（2026-11-12）
+
+| # | 验收项 | 结果 | 证据 |
+|---|---|---|---|
+| 1 | 默认视图 | 通过：50 条边 / 17 个节点 | `src/components/GraphCanvas.test.tsx`：`renders one node group per graph node and one line per edge`；`src/App.test.tsx`：`filters the canvas down to negative edges from the panel` 初始计数。 |
+| 2 | 极性筛选 | 通过：仅 `-` 19/14、仅 `+` 22/15、仅 `0` 9/11、`+`&`-` 41/16 | `src/lib/filter.test.ts`：`visibleSets / filterVisibleData` 参数化用例 `negative only`、`positive only`、`unspecified only`、`positive and negative`。 |
+| 3 | 证据下限 | 通过：≥2 为 34/17、≥3 为 23/15、≥5 为 15/12、`-` 且 ≥5 为 4/6 | `src/lib/filter.test.ts`：参数化用例 `all >=2`、`all >=3`、`all >=5`、`negative >=5`；筛选卡交互由 `src/components/FilterPanel.test.tsx`：`applies the evidence floor from the select` 覆盖。 |
+| 4 | 筛选为隐藏 | 通过：隐藏边不在 DOM 中 | `src/components/GraphCanvas.test.tsx`：`does not render hidden edges at all (no faded leftovers)`。 |
+| 5 | 层框几何固定 | 通过：筛选前后 x/y/width/height 快照相等 | `src/components/GraphCanvas.test.tsx`：`keeps layer boxes pinned to the full layout under any filter`。 |
+| 6 | 筛掉选中项后回 idle | 通过：context 同步清空；端到端图例恢复 | `src/context/GraphContext.test.tsx`：`clears a selection that the new filter hides`；`src/App.test.tsx`：`drops the selection when the filtered edge disappears`。 |
+| 7 | 节点详情隐藏数按节点统计 | 通过：ph 显示 6 条可见 / 隐藏 4 条；qmax 三条全可见且不显示隐藏行 | `src/components/Sidebar.test.tsx`：`lists only visible edges and reports this node's own hidden count`、`does not report a hidden count for a node whose edges all survive`。 |
+| 8 | 全关为空图且可恢复 | 通过：0/50、提示文案、重置按钮可用 | `src/components/FilterPanel.test.tsx`：`allows an all-off state and states it plainly`、`resets everything with the reset button`；`src/components/GraphCanvas.test.tsx`：`shows a hint instead of a blank canvas when nothing matches`；`src/App.test.tsx`：`drops the selection when the filtered edge disappears`。 |
+| 9 | 视觉、依赖与体积 | 通过：侧栏为固定筛选卡 + 独立滚动详情卡；未增加依赖；JS gzip 90.97 kB（<100 KB） | `src/components/Sidebar.tsx`、`src/components/FilterPanel.tsx`；`npm run build` 实测；`package.json` dependencies 未变。 |
+| 10 | 质量门 | 通过：81/81 测试、`npx tsc -b` 零错误、`npm run lint` 无 error、`npm run build` 成功 | `npx vitest run`、`npx tsc -b`、`npm run lint`、`npm run build`。 |
+
+筛选面板实现后全套测试从原 39 项增至 81 项。lint 输出 4 条 warning（Fast Refresh 导出与测试 hook 依赖提示），无 error。
